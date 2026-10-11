@@ -1,0 +1,103 @@
+/* Custom Styling for A.B.M Mehedi Hasan Portfolio */
+
+@layer utilities {
+    .skill-tag {
+        @apply inline-flex items-center px-3 py-1 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 dark:bg-slate-750 dark:bg-slate-800 dark:text-slate-300 border border-slate-200 dark:border-slate-700;
+    }
+}
+
+/* Custom Animation Keyframes */
+@keyframes bounceSlow {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.animate-bounce-slow {
+    animation: bounceSlow 4s ease-in-out infinite;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #0b1120;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 5px;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #1e293b;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #334155;
+}
+
+/* Navigation active indicator */
+.nav-link {
+    white-space: nowrap !important;
+}
+
+.nav-link.active {
+    color: #2563eb !important;
+    background-color: rgba(37, 99, 235, 0.08);
+}
+
+.dark .nav-link.active {
+    color: #60a5fa !important;
+    background-color: rgba(96, 165, 250, 0.12);
+}
+
+/* Print Styles for PDF Generation / Resume Printing */
+@media print {
+    header, footer, #toast, #mobile-menu, #theme-toggle, button, form, .no-print {
+        display: none !important;
+    }
+
+    body {
+        background-color: white !important;
+        color: black !important;
+        font-size: 11pt;
+    }
+
+    main {
+        padding-top: 0 !important;
+    }
+
+    section {
+        padding-top: 15px !important;
+        padding-bottom: 15px !important;
+        page-break-inside: avoid;
+    }
+
+    .shadow-sm, .shadow-md, .shadow-lg, .shadow-xl, .shadow-2xl {
+        box-shadow: none !important;
+        border: 1px solid #e2e8f0 !important;
+    }
+
+    a {
+        text-decoration: none !important;
+        color: black !important;
+    }
+
+    .border-y, .border-t {
+        border-color: #cbd5e1 !important;
+    }
+}
